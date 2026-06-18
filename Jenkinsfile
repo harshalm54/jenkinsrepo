@@ -51,6 +51,7 @@ pipeline {
 
             steps {
                 sh '''
+                    echo "Docker -- $DOCKER_CREDS_USR @ $DOCKER_CREDS_PSW"
                     echo "$DOCKER_CREDS_PSW" | docker login -u "$DOCKER_CREDS_USR" --password-stdin
                 '''
             }
